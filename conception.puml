@@ -1,0 +1,27 @@
+@startuml titre Manipulation de lampes
+
+'''classes
+class Lampe {
+    -nom : String
+    -allumee : boolean
+
+    +Lampe(nom)
+    +allumer()
+    +eteindre()
+    +toString() : String
+}
+
+class Telecommande {
+
+    +Telecommande()
+    +ajouterLampe(Lampe)
+    +activerLampe(int indiceLampe)
+    +desactiverLamper(int indiceLampe)
+    +activerTout()
+    +toString() : String
+}
+
+'''relations
+Telecommande "1" --> "*" Lampe : -lampes
+
+@enduml
