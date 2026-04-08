@@ -12,11 +12,11 @@ public class Telecommande {
         throw new Error (" code non ecrit ");
     }
 
-    public void activerLamper(int indiceLampe){
+    public void activerLampe(int indiceLampe){
         throw new Error (" code non ecrit ");
     }
 
-    public void desactiverLamper(int indiceLampe){
+    public void desactiverLampe(int indiceLampe){
         throw new Error (" code non ecrit ");
     }
 
