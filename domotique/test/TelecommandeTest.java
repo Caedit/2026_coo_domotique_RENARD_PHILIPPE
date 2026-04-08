@@ -1,5 +1,6 @@
-import org.testng.annotations.Test;
-import static org.testng.Assert.*;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class TelecommandeTest {
     /**
@@ -84,7 +85,7 @@ public class TelecommandeTest {
         try {
             t.activerLampe(1);
         }
-        catch (ArrayIndexOutOfBoundsException e){
+        catch (IndexOutOfBoundsException e){
             test = true;
         }
 
