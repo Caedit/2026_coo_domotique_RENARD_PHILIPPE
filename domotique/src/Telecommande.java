@@ -5,27 +5,33 @@ public class Telecommande {
     private ArrayList <Lampe> lampes;
 
     public Telecommande() {
-        throw new Error (" code non ecrit ");
+        this.lampes = new ArrayList<>();
     }
 
     public void ajouterLampe(Lampe lamp){
-        throw new Error (" code non ecrit ");
+        this.lampes.add(lamp);
     }
 
-    public void activerLampe(int indiceLampe){
-        throw new Error (" code non ecrit ");
+    public void activerLampe(int indiceLampe) throws IndexOutOfBoundsException {
+        this.lampes.get(indiceLampe).allumer();
     }
 
-    public void desactiverLampe(int indiceLampe){
-        throw new Error (" code non ecrit ");
+    public void desactiverLampe(int indiceLampe) throws IndexOutOfBoundsException {
+        this.lampes.get(indiceLampe).eteindre();
     }
 
-    public void activerTout(){
-        throw new Error (" code non ecrit ");
+    public void activerTout() {
+        for (Lampe l : lampes){
+            l.allumer();
+        }
     }
 
-    public String toString() {
-        throw new Error (" code non ecrit ");
+    public String toString(){
+        String rt = "";
+        for (Lampe l : lampes){
+            rt += l + "\n";
+        }
+        return rt;
     }
 
     public ArrayList<Lampe> getLampes() {
