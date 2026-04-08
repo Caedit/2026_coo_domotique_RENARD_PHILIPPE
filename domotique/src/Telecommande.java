@@ -3,26 +3,46 @@ import java.util.ArrayList;
 public class Telecommande {
     //Attibuts
     private ArrayList <Lampe> lampes;
+    private ArrayList <Hifi> hifis;
 
     public Telecommande() {
         this.lampes = new ArrayList<>();
+        this.hifis = new ArrayList<>();
     }
 
     public void ajouterLampe(Lampe lamp){
         this.lampes.add(lamp);
     }
 
+    public void ajouterHifi(Hifi hif){
+        this.hifis.add(hif);
+    }
+
     public void activerLampe(int indiceLampe) throws IndexOutOfBoundsException {
         this.lampes.get(indiceLampe).allumer();
+    }
+
+    public void activerHifi (int indiceHifi) throws IndexOutOfBoundsException {
+        this.hifis.get(indiceHifi).allumer();
     }
 
     public void desactiverLampe(int indiceLampe) throws IndexOutOfBoundsException {
         this.lampes.get(indiceLampe).eteindre();
     }
 
-    public void activerTout() {
+    public void desactiverHifi(int indiceHifi) throws IndexOutOfBoundsException {
+        this.hifis.get(indiceHifi).eteindre();
+    }
+
+    public void activerToutLampe() {
         for (Lampe l : lampes){
             l.allumer();
+        }
+    }
+
+    public void activerToutHifi() {
+        for (Hifi h : hifis){
+            h.allumer();
         }
     }
 
