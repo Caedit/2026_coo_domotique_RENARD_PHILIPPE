@@ -1,5 +1,5 @@
 public interface Appareil{
-    void allmer();
+    void allumer();
     void eteindre();
 
 }
