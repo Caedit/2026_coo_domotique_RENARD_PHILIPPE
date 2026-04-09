@@ -1,0 +1,174 @@
+Q2)
+@startuml titre Manipulation de lampes
+
+'''classes
+class Lampe {
+    -nom : String
+    -allumee : boolean
+
+    +Lampe(nom)
+    +allumer()
+    +eteindre()
+    +toString() : String
+}
+
+class Hifi{
+    +son : int;
+
+    +allumer()
+    +eteindre()
+    +toString(): String
+}
+
+class Telecommande {
+
+    +Telecommande()
+    +ajouterLampe(l)
+    +ajouterHifi(h)
+    +activerLampe(indiceLampe)
+    +activerHifi(indiceHifi)
+    +desactiverLampe(indiceLampe)
+    +desactiverHifi(indiceHifi)
+    +activerTout()
+    +toString() : String
+}
+
+'''relations
+Telecommande "1" --> "*" Lampe : -lampes
+Telecommande "1" --> "*" Hifi : -hifis
+
+@enduml
+
+Q3)
+On a ajouté un attribut hifis à Telecommande +1 ligne
+On a modifié le constructeur pour construire l'attribut + 1 ligne
+On a ajouté les méthodes:
+ajouterHifi +1 ligne
+activerHifi +2 lignes
+desactiverHifi +2 lignes
+et on a modifié les méthodes:
+activerTout +2 lignes
+toString +2 lignes
+Cela fait 11 lignes ajoutées et 3 modifiées
+
+Q4)
+@startuml titre Manipulation de lampes
+
+'''classes
+class Lampe {
+    -nom : String
+    -allumee : boolean
+
+    +Lampe(nom)
+    +allumer()
+    +eteindre()
+    +toString() : String
+}
+
+class Hifi{
+    +son : int;
+
+    +allumer()
+    +eteindre()
+    +toString(): String
+}
+
+class Television{
+    +son : int;
+
+    +allumer()
+    +eteindre()
+    +toString(): String
+}
+
+class Telecommande {
+
+    +Telecommande()
+    +ajouterLampe(l)
+    +ajouterHifi(h)
+    +ajouterTelevision(t)
+    +activerLampe(indiceLampe)
+    +activerHifi(indiceHifi)
+    +activerTelevision(indiceTelevision)
+    +desactiverLampe(indiceLampe)
+    +desactiverHifi(indiceHifi)
+    +desactiverTelevision(indiceTelevision)
+    +activerTout()
+    +toString() : String
+}
+
+'''relations
+Telecommande "1" --> "*" Lampe : -lampes
+Telecommande "1" --> "*" Hifi : -hifis
+Telecommande "1" --> "*" Television : -televisions
+
+@enduml
+
+Q5)
+Oui les classes sont pratiquement identiques, on a donc naturellement fait un copier-coller.
+Si un bug est présent dans l'une des méthodes qu'on a copiée, il faudra le régler dans toutes les classes quand on le 
+découvrira. Le code n'est donc pas facilement maintenable.
+
+Q6)
+Les flèches partent de Telecommande et vont vers les classes Lampe, Hifi et Television.
+Cela implique que si on modifie l'une des classes Lampe, Hifi ou Television, 
+il faut également modifier Telecommande. Si Hifi ne possédait plus eteindre et allumer mais augmenterSon ou baisserSon,
+cela impliquerait un changement drastique sur Telecommande.
+
+Q7)
+Une télécommande est un outils qui peut contrôler à distance des Lampes, des chaines Hifis et des Televisions.
+
+Q8)
+@startuml titre Manipulation de lampes
+
+'''classes
+class Lampe {
+    -nom : String
+    -allumee : boolean
+
+    +Lampe(nom)
+    +allumer()
+    +eteindre()
+    +toString() : String
+}
+
+interface Appareil{
+    +allumer()
+    +eteindre()
+}
+
+class Hifi {
+    +son : int;
+
+    +allumer()
+    +eteindre()
+    +toString(): String
+}
+
+
+class Telecommande {
+
+    +Telecommande()
+    +ajouter(a)
+    +activer(indice)
+    +desactiverLampe(indice)
+    +activerTout()
+    +toString() : String
+}
+
+'''relations
+Telecommande "1" --> "*" Appareil : appareils
+Appareil <|.. Lampe
+Appareil <|.. Hifi
+
+@enduml
+
+Q12)
+D'une part, notre nouvelle conception est plus simple à comprendre en regardant directement le schéma UML.
+L'ajout d'une nouvelle classe est plus simple et court car il ne modifie pas Telecommande.
+Aucun copier-coller dans Telecommande n'est donc nécessité et la nouvelle classe doit juste implémenter 
+l'interface Appareil.
+
+Q13)
+Il suffit de crées la nouvelle classe, et celle-ci doit implémenter Appareil.
+Elle doit donc posséder les méthodes allumer() et eteindre().
