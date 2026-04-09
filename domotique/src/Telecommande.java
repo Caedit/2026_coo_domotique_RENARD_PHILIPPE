@@ -2,62 +2,39 @@ import java.util.ArrayList;
 
 public class Telecommande {
     //Attibuts
-    private ArrayList <Lampe> lampes;
-    private ArrayList <Hifi> hifis;
+    private ArrayList <Appareil> appareils;
 
     public Telecommande() {
-        this.lampes = new ArrayList<>();
-        this.hifis = new ArrayList<>();
+        this.appareils = new ArrayList<>();
     }
 
-    public void ajouterLampe(Lampe lamp){
-        this.lampes.add(lamp);
+    public void ajouter(Appareil a){
+        this.appareils.add(a);
     }
 
-    public void ajouterHifi(Hifi hif){
-        this.hifis.add(hif);
+    public void activer(int indice) throws IndexOutOfBoundsException {
+        this.appareils.get(indice).allumer();
     }
 
-    public void activerLampe(int indiceLampe) throws IndexOutOfBoundsException {
-        this.lampes.get(indiceLampe).allumer();
-    }
-
-    public void activerHifi (int indiceHifi) throws IndexOutOfBoundsException {
-        this.hifis.get(indiceHifi).allumer();
-    }
-
-    public void desactiverLampe(int indiceLampe) throws IndexOutOfBoundsException {
-        this.lampes.get(indiceLampe).eteindre();
-    }
-
-    public void desactiverHifi(int indiceHifi) throws IndexOutOfBoundsException {
-        this.hifis.get(indiceHifi).eteindre();
+    public void desactiver(int indice) throws IndexOutOfBoundsException {
+        this.appareils.get(indice).eteindre();
     }
 
     public void activerTout() {
-        for (Lampe l : lampes){
-            l.allumer();
-        }
-        for (Hifi h : hifis){
-            h.allumer();
+        for (Appareil a : appareils){
+            a.allumer();
         }
     }
 
     public String toString(){
         String rt = "";
-        for (Lampe l : lampes){
-            rt += l + "\n";
-        }
-        for (Hifi h : hifis){
-            rt += h + "\n";
+        for (Appareil a : appareils){
+            rt += a + "\n";
         }
         return rt;
     }
 
-    public ArrayList<Lampe> getLampes() {
-        return lampes;
-    }
-    public ArrayList<Hifi> getHifis() {
-        return hifis;
+    public ArrayList<Appareil> getAppareils() {
+        return this.appareils;
     }
 }
