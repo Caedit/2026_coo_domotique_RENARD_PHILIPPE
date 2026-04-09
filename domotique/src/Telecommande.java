@@ -34,13 +34,10 @@ public class Telecommande {
         this.hifis.get(indiceHifi).eteindre();
     }
 
-    public void activerToutLampe() {
+    public void activerTout() {
         for (Lampe l : lampes){
             l.allumer();
         }
-    }
-
-    public void activerToutHifi() {
         for (Hifi h : hifis){
             h.allumer();
         }
@@ -51,10 +48,16 @@ public class Telecommande {
         for (Lampe l : lampes){
             rt += l + "\n";
         }
+        for (Hifi h : hifis){
+            rt += h + "\n";
+        }
         return rt;
     }
 
     public ArrayList<Lampe> getLampes() {
         return lampes;
+    }
+    public ArrayList<Hifi> getHifis() {
+        return hifis;
     }
 }

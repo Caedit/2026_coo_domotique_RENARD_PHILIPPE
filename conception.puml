@@ -28,8 +28,7 @@ class Telecommande {
     +activerHifi(indiceHifi)
     +desactiverLampe(indiceLampe)
     +desactiverHifi(indiceHifi)
-    +activerToutLampe()
-    +activerToutHifi()
+    +activerTout()
     +toString() : String
 }
 
