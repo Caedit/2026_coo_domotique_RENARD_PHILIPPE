@@ -35,8 +35,23 @@ class Telecommande {
     +toString() : String
 }
 
+class Cheminee {
+    +intensite : int
+
+    +Cheminee()
+    +changerIntensite(i)
+    +getLumiere() : int
+    +toString() : String
+}
+
+class AdapterCheminee implements Appareil{
+    +allumer()
+    +eteindre()
+}
+
 '''relations
 Telecommande "1" --> "*" Appareil : appareils
+ChemineeAppareil "1" --> "1" Cheminee : ch
 Appareil <|.. Lampe
 Appareil <|.. Hifi
 
