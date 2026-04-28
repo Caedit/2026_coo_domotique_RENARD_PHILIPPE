@@ -13,7 +13,7 @@ public class AdapterCheminee {
      * permet d'allumer
      */
     public void allumer() {
-
+        this.ch.changerIntensite(10);
     }
 
     /**
@@ -24,6 +24,6 @@ public class AdapterCheminee {
     }
 
     public String toString() {
-        return ch.toString();
+        return this.ch.toString();
     }
 }
