@@ -58,4 +58,17 @@ public class TelecommandeTest {
         // verification
         assertTrue(test,"La méthode devrait renvoyer une exception");
     }
+
+    @Test
+    public void testActiverCheminee() {
+        Telecommande t = new Telecommande();
+        Cheminee ch = new Cheminee();
+        AdapterCheminee ac = new AdapterCheminee(ch);
+        t.ajouter(ac);
+
+        t.activer(0);
+
+        //Vérification
+        assertEquals(10, ch.getLumiere(), "La cheminer devrait s'allumer");
+    }
 }
