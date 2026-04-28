@@ -9,7 +9,7 @@ public class AdapterCheminee {
      * permet d'allumer
      */
     public void allumer() {
-
+        this.ch.changerIntensite(10);
     }
 
     /**
