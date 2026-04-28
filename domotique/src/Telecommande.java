@@ -37,4 +37,8 @@ public class Telecommande {
     public ArrayList<Appareil> getAppareils() {
         return this.appareils;
     }
+
+    public int getNombre(){
+        return this.appareils.size();
+    }
 }
