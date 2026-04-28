@@ -13,7 +13,7 @@ public class AdapterCheminee implements Appareil{
      * permet d'allumer
      */
     public void allumer() {
-        this.ch.changerIntensite(10);
+        this.ch.changerIntensite(this.ch.getLumiere()+10);
     }
 
     /**
