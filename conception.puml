@@ -51,7 +51,7 @@ class AdapterCheminee implements Appareil{
 
 '''relations
 Telecommande "1" --> "*" Appareil : appareils
-ChemineeAppareil "1" --> "1" Cheminee : ch
+AdapterCheminee "1" --> "1" Cheminee : ch
 Appareil <|.. Lampe
 Appareil <|.. Hifi
 
