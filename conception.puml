@@ -47,6 +47,7 @@ class Cheminee {
 class AdapterCheminee implements Appareil{
     +allumer()
     +eteindre()
+    +toString() : String
 }
 
 '''relations
