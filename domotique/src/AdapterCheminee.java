@@ -5,6 +5,10 @@
 public class AdapterCheminee {
     private Cheminee ch;
 
+    public AdapterCheminee(Cheminee c){
+        this.ch = c;
+    }
+
     /**
      * permet d'allumer
      */
@@ -16,7 +20,7 @@ public class AdapterCheminee {
      * permet d'eteindre
      */
     public void eteindre() {
-
+        this.ch.changerIntensite(0);
     }
 
     public String toString() {
