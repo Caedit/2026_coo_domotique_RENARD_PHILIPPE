@@ -60,6 +60,19 @@ public class TelecommandeTest {
     }
 
     @Test
+    public void testAllumerCheminee(){
+        // methode testee
+        Telecommande t = new Telecommande();
+        Cheminee c = new Cheminee();
+        AdapterCheminee aC = new AdapterCheminee(c);
+        t.ajouter(aC);
+        t.activer(0);
+
+        // verification
+        assertEquals(10, c.getLumiere(),"La cheminee devrait être allumee");
+    }
+
+    @Test
     public void testEteindreCheminee(){
         // methode testee
         Telecommande t = new Telecommande();
