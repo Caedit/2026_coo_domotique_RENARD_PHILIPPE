@@ -2,7 +2,7 @@
  * permet d'utiliser une cheminee en tant qu'appareil
  */
 
-public class AdapterCheminee {
+public class AdapterCheminee implements Appareil{
     private Cheminee ch;
 
     public AdapterCheminee(Cheminee c){
