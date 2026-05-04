@@ -1,0 +1,13 @@
+Le main Crée un objet chargeur de type ChargeurMagasin à l'aide du constructeur ChargeurMagasin(rep) avec le paramètre rep qui représente l'emplacement du repertoire contenant les données.
+
+Le main appel ensuite la méthode chargerMagasin() sur l'objet chargeur
+
+Cette méthode crée un objet magasin de type Magasin à l'aide du constructeur vide
+
+puis, pour tout les fichier de ce repertoire, on crée un objet chargeCd1 de type ChargeurCD à l'aide du constructeur en passant en paramètre le nom d'un fichier spécifique.
+
+puis on appelle la méthode chargerCD() sur cet objet
+
+cette méthode crée un objet cd1 de type CD à l'aide du constructeur CD, qui prend le nom du cd et de l'artiste et qui ajoute toutes les pistes une à une.
+
+enfin, on ajoute le CD, puis on fait la même étape avec le fichier suivant avant que tous les fichiers soient fait.
