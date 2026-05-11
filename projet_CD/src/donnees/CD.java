@@ -101,6 +101,10 @@ public class CD {
 		return this.nomCD.compareTo(c.nomCD);
 	}
 
+	public int compareArtiste(CD c){
+		return this.nomArtiste.compareTo(c.nomArtiste);
+	}
+
 	public String getNomArtiste() {
 		return nomArtiste;
 	}

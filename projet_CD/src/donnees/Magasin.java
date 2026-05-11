@@ -68,7 +68,7 @@ public class Magasin {
 		return(res);
 	}
 
-	public void trieCd() {
+	public void trierAlbum() {
 		ArrayList<CD> listTrie = new ArrayList<CD>();
 		while (this.getNombreCds() > 1) {
 			CD min = this.getCd(0);
@@ -79,7 +79,24 @@ public class Magasin {
 					posMin = i;
 				}
 			}
-			System.out.println(posMin);
+			listTrie.add(min);
+			this.listeCds.remove(posMin);
+		}
+		listTrie.add(this.getCd(0));
+		this.listeCds = listTrie;
+	}
+
+	public void trierArtiste() {
+		ArrayList<CD> listTrie = new ArrayList<CD>();
+		while (this.getNombreCds() > 1) {
+			CD min = this.getCd(0);
+			int posMin = 0;
+			for (int i = 1; i < this.getNombreCds(); i++) {
+				if (this.getCd(i).compareArtiste(min) < 0) {
+					min = this.getCd(i);
+					posMin = i;
+				}
+			}
 			listTrie.add(min);
 			this.listeCds.remove(posMin);
 		}
