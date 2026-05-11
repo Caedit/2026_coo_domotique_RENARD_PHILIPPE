@@ -68,13 +68,13 @@ public class Magasin {
 		return(res);
 	}
 
-	public void trierAlbum() { // duplication de méthode
+	public void trier(ComparateurCd strat) {
 		ArrayList<CD> listTrie = new ArrayList<CD>();
 		while (this.getNombreCds() > 1) {
 			CD min = this.getCd(0);
 			int posMin = 0;
 			for (int i = 1; i < this.getNombreCds(); i++) {
-				if (this.getCd(i).compareTitre(min) < 0) {
+				if (strat.etreAvant(this.getCd(i),min)){
 					min = this.getCd(i);
 					posMin = i;
 				}
@@ -85,23 +85,4 @@ public class Magasin {
 		listTrie.add(this.getCd(0));
 		this.listeCds = listTrie;
 	}
-
-	public void trierArtiste() { // duplication de méthode
-		ArrayList<CD> listTrie = new ArrayList<CD>();
-		while (this.getNombreCds() > 1) {
-			CD min = this.getCd(0);
-			int posMin = 0;
-			for (int i = 1; i < this.getNombreCds(); i++) {
-				if (this.getCd(i).compareArtiste(min) < 0) {
-					min = this.getCd(i);
-					posMin = i;
-				}
-			}
-			listTrie.add(min);
-			this.listeCds.remove(posMin);
-		}
-		listTrie.add(this.getCd(0));
-		this.listeCds = listTrie;
-	}
-
 }

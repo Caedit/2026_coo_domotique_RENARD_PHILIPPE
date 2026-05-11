@@ -1,4 +1,6 @@
 import XML.ChargeurMagasin;
+import donnees.ComparateurAlbum;
+import donnees.ComparateurArtiste;
 import donnees.Magasin;
 import org.junit.jupiter.api.Test;
 
@@ -13,7 +15,7 @@ public class TestMagasin {
         ChargeurMagasin cm = new ChargeurMagasin("musicbrainzSimple");
         Magasin m = cm.chargerMagasin();
 
-        m.trierAlbum();
+        m.trier(new ComparateurAlbum());
 
         assertEquals("Believe", m.getCd(0).getNomCD(), "le premier titre n'est pas bon");
         assertEquals("Whitney Houston", m.getCd(m.getNombreCds()-1).getNomCD(), "le dernier titre n'est pas bon");
@@ -24,7 +26,7 @@ public class TestMagasin {
         ChargeurMagasin cm = new ChargeurMagasin("musicbrainzSimple");
         Magasin m = cm.chargerMagasin();
 
-        m.trierArtiste();
+        m.trier(new ComparateurArtiste());
 
         assertEquals("Bénabar", m.getCd(0).getNomArtiste(), "le premier Artiste n'est pas bon");
         assertEquals("Zebda", m.getCd(m.getNombreCds()-1).getNomArtiste(), "le dernier Artiste n'est pas bon");
