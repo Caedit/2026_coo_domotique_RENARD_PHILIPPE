@@ -68,7 +68,7 @@ public class Magasin {
 		return(res);
 	}
 
-	public void trierAlbum() {
+	public void trierAlbum() { // duplication de méthode
 		ArrayList<CD> listTrie = new ArrayList<CD>();
 		while (this.getNombreCds() > 1) {
 			CD min = this.getCd(0);
@@ -86,7 +86,7 @@ public class Magasin {
 		this.listeCds = listTrie;
 	}
 
-	public void trierArtiste() {
+	public void trierArtiste() { // duplication de méthode
 		ArrayList<CD> listTrie = new ArrayList<CD>();
 		while (this.getNombreCds() > 1) {
 			CD min = this.getCd(0);
